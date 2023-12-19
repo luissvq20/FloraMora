@@ -21,3 +21,195 @@
     width: 9rem;
     height: 9rem;
 }
+
+.barra-busqueda{
+    background-color: var(--cabecera);
+}
+
+.buscador{
+    width: 74%;
+    margin-left: 0.5rem;
+    height: 3rem;
+    border-color: #ebdce8;
+    border-radius: 0.5rem;
+
+}
+
+.buscador:focus{
+    border-color: #cf70bc;
+    outline: none;
+
+
+}
+
+
+
+
+.button {
+    min-width: 130px;
+    height: 3rem;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 0.5rem;
+    border: none;
+    box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
+    background: #b26fa7;
+   z-index: 1;
+  }
+  .button:hover:after {
+    width: 100%;
+    left: 0;
+  }
+  .button:after {
+    border-radius: 5px;
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 100%;
+    top: 0;
+    z-index: -1;
+    box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
+    transition: all 0.3s ease;
+    background-color: #E98837;
+    right: 0;
+  }
+  .button:active {
+    top: 2px;
+  }
+
+
+  .buscar {
+    min-width: 6.5rem;
+    height: 3rem;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 0.5rem;
+    border: none;
+    box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
+    background: #072A26;
+   z-index: 1;
+  }
+  .buscar:hover:after {
+    width: 100%;
+    left: 0;
+  }
+  .buscar:after {
+    border-radius: 5px;
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 100%;
+    top: 0;
+    z-index: -1;
+    box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
+    transition: all 0.3s ease;
+    background-color: #E98837;
+    right: 0;
+  }
+  .buscar:active {
+    top: 2px;
+  }
+
+
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+
+    .buscar {
+        min-width: 10rem;
+        height: 3rem;
+        color: #fff;
+        padding: 5px 10px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+        display: inline-block;
+        outline: none;
+        border-radius: 0.5rem;
+        border: none;
+        box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
+        background: #072A26;
+       z-index: 1;
+      }
+
+    .button {
+        min-width: 7rem;
+        margin: 0%;
+        height: 3rem;
+        color: #fff;
+        padding: 0.25em 0.5em;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+        outline: none;
+        border-radius: 0.5rem;
+        border: none;
+        box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
+        background: #b26fa7;
+       z-index: 1;
+      }
+  
+    
+  }
+  
+  
+  /* 
+    ##Device = Most of the Smartphones Mobiles (Portrait)
+    ##Screen = B/w 320px to 479px
+  */
+  
+  @media (min-width: 320px) and (max-width: 480px) {
+  
+    .buscar {
+        min-width: 5.5rem;
+        height: 3rem;
+        color: #fff;
+        padding: 5px 10px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+        display: inline-block;
+        outline: none;
+        border-radius: 0.5rem;
+        border: none;
+        box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
+        background: #072A26;
+       z-index: 1;
+      }
+   
+.button {
+    min-width: 3rem;
+    margin: 0%;
+    height: 3rem;
+    color: #fff;
+    padding: 0.25em 0.5em;
+    font-weight: bold;
+    font-size: 60%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    outline: none;
+    border-radius: 0.5rem;
+    border: none;
+    box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
+    background: #b26fa7;
+   z-index: 1;
+  }
+ 
+    
+    
+  }
