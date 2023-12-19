@@ -1,0 +1,23 @@
+:root {
+    --blanco_roto: #EDE8D9;
+    --cabecera: #FFF7D0;
+    --azul_oscuro: #17191D;
+    --naranja_claro: #FE8A78;
+  }
+
+.cabecera{
+    background-color:var(--cabecera);
+}
+
+.cabecera_icono{
+    width: 3rem;
+    height: 3rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+
+}
+
+.logo{
+    width: 9rem;
+    height: 9rem;
+}
