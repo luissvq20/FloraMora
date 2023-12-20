@@ -24,6 +24,7 @@
 
 .barra-busqueda{
     background-color: var(--cabecera);
+    padding-bottom: 0.2rem;
 }
 
 .buscador{
@@ -46,7 +47,7 @@
 
 
 .button {
-    min-width: 130px;
+    min-width: 8rem;
     height: 3rem;
     color: #fff;
     padding: 5px 10px;
@@ -59,7 +60,7 @@
     border-radius: 0.5rem;
     border: none;
     box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
-    background: #b26fa7;
+    background: #969546;
    z-index: 1;
   }
   .button:hover:after {
@@ -76,7 +77,7 @@
     z-index: -1;
     box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
     transition: all 0.3s ease;
-    background-color: #E98837;
+    background-color: #a6621d69;
     right: 0;
   }
   .button:active {
@@ -115,13 +116,16 @@
     z-index: -1;
     box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
     transition: all 0.3s ease;
-    background-color: #E98837;
+    background-color: #1c3504e4;
     right: 0;
   }
   .buscar:active {
     top: 2px;
   }
 
+.texto-carrusel{
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
 
 
   @media (min-width: 768px) and (max-width: 1024px) {
@@ -158,7 +162,7 @@
         border-radius: 0.5rem;
         border: none;
         box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
-        background: #b26fa7;
+        background: #969546;
        z-index: 1;
       }
   
@@ -206,10 +210,13 @@
     border-radius: 0.5rem;
     border: none;
     box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
-    background: #b26fa7;
+    background: #969546;
    z-index: 1;
   }
  
+  .carraca{
+    display: none;
+  }
     
     
   }
