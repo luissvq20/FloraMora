@@ -1,0 +1,88 @@
+{
+    "plantas":[
+            {
+                "id":1,
+                "nombre":"Pachira aquatica Mini",
+                "precio": 13.95,
+                "imagen_planta":"pachira.jpg",
+                "tipo":"interior"
+            },
+            {
+                "id":2,
+                "nombre":"Sansevieria trifasciata 'Futura Superba'",
+                "precio": 12.95,
+                "imagen_planta":"Sansevieria.jpg",
+                "tipo":"interior"
+            },
+            {
+                "id":3,
+                "nombre":"Aspidistra",
+                "precio": 23.95,
+                "imagen_planta":"Aspidistra.jpg",
+                "tipo":"interior"
+            },
+            {
+                "id":4,
+                "nombre":"Amarilis",
+                "precio": 9.95,
+                "imagen_planta":"Amarilis.jpg",
+                "tipo":"exterior"
+            },
+            {
+                "id":5,
+                "nombre":"Brachycome",
+                "precio": 7.95,
+                "imagen_planta":"Brachycome.jpg",
+                "tipo":"exterior"
+            },
+            {
+                "id":6,
+                "nombre":"Lilium orientalis",
+                "precio": 19.95,
+                "imagen_planta":"Lilium.jpg",
+                "tipo":"exterior"
+            },
+            {
+                "id":7,
+                "nombre":"Alcachofa",
+                "precio": 2.55,
+                "imagen_planta":"Alcachofa.jpg",
+                "tipo":"huerto"
+            },
+            {
+                "id":8,
+                "nombre":"Apio",
+                "precio": 3.95,
+                "imagen_planta":"Apio.jpg",
+                "tipo":"huerto"
+            },
+            {
+                "id":9,
+                "nombre":"Acelga",
+                "precio": 2.95,
+                "imagen_planta":"Acelga.jpg",
+                "tipo":"huerto"
+            },
+            {
+                "id":10,
+                "nombre":"Tomillo",
+                "precio": 15.90,
+                "imagen_planta":"Tomillo.jpg",
+                "tipo":"semilla"
+            },
+            {
+                "id":11,
+                "nombre":"Romero",
+                "precio": 12.95,
+                "imagen_planta":"Romero.jpg",
+                "tipo":"semilla"
+            },
+            {
+                "id":12,
+                "nombre":"Cilantro",
+                "precio": 13.90,
+                "imagen_planta":"Cilantro.jpg",
+                "tipo":"semilla"
+            }
+    ]
+}
