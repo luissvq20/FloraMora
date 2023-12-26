@@ -84,6 +84,43 @@
     top: 2px;
   }
 
+  
+  .botonadd{
+    min-width: 8rem;
+    height: 2.3rem;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border: none;
+    box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
+    background: #5b32087d;
+    z-index: 1;
+  }
+  .botonadd:hover:after{
+    width: 100%;
+    left: 0;
+  }
+  .botonadd:after{
+    border-radius: 5px;
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 100%;
+    top: 0;
+    z-index: -1;
+    box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
+    transition: all 0.3s ease;
+    background-color: #a6621d69;
+    right: 0;
+  }
+  .botonadd:active{
+    top: 2px;
+  }
 
   .buscar {
     min-width: 6.5rem;
@@ -125,6 +162,29 @@
 
 .texto-carrusel{
   font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.img-galeria{
+  width: 100%;
+  display: block;
+  margin-bottom: 15px;
+  cursor: pointer;  
+  padding: 0%;  
+}
+
+
+
+.divimagen{
+  display: flex;
+  flex-direction: column;
+  margin: 1%;
+  margin-bottom: 10%;
+}
+
+.productos{
+  margin-left: 2%;
+  margin-right: 2%;
+
 }
 
 

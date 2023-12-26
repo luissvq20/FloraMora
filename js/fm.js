@@ -1,4 +1,4 @@
-$(()=> init());
+$(()=>init());
 var plantas_json;
 function init(){
     fetch('/json/productos.json')
@@ -18,23 +18,20 @@ function mostrarPlantas(datos) {
         var div_planta = $("<div>");
         div_planta.addClass("col");
         div_planta.id = "planta_" + index;
-        div_planta.text(`
-           
-            <div class="divimagen" >
-                <div>
+        div_planta.append(`
+            <div class="divimagen container-100">
+                <div class="row">
                     <img src="/images/${planta.imagen_planta}" id="imagen_planta" alt="" class="img-galeria">
                 </div>
-                <div class="texto">
-                    <p class="precio" id="precio">${planta.precio}€</p>
-                    <p class="nombre" id="nombre">${planta.nombre}</p>
-                    <p id="descripcion_1">${planta.descripcion_1}</p>
-                    <p id="descripcion_2">${planta.descripcion_2}</p>
+                <div class="texto row">
+                    <p class="nombre col-9  d-flex justify-content-start" id="nombre">${planta.nombre}</p>
+                    <p class="precio col-3 d-flex justify-content-end"  id="precio">${planta.precio}€</p>
                 </div>
-                <input type="button" class="botones" onclick=showmodal(${coche.id}) value="Ver info">
+                <button class="botonadd" onclick=showmodal(${planta.id})>Añadir al carrito</button>
 
             </div>
         `);
-        contenedor_plantas.appendChild(div_planta)
+        contenedor_plantas.append(div_planta);
     })
 
 }
