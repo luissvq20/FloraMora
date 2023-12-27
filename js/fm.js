@@ -35,3 +35,180 @@ function mostrarPlantas(datos) {
     })
 
 }
+
+function filtroTODO() {
+    $(".carraca").css("display","none");
+    var contenedor_plantas = $("#plantas");
+    contenedor_plantas.text(" ");
+
+    plantas_json.forEach((planta, index) => {
+        var div_planta = $("<div>");
+        div_planta.addClass("col");
+        div_planta.id = "planta_" + index;
+        div_planta.append(`
+            <div class="divimagen container-100">
+                <div class="row">
+                    <img src="/images/${planta.imagen_planta}" id="imagen_planta" alt="" class="img-galeria">
+                </div>
+                <div class="texto row">
+                    <p class="nombre col-9  d-flex justify-content-start" id="nombre">${planta.nombre}</p>
+                    <p class="precio col-3 d-flex justify-content-end"  id="precio">${planta.precio}€</p>
+                </div>
+                <button class="botonadd" onclick=showmodal(${planta.id})>Añadir al carrito</button>
+
+            </div>
+        `);
+        contenedor_plantas.append(div_planta);
+    })
+}
+
+
+function filtroINTERIOR() {
+    $(".carraca").css("display","none");
+    var plantas_filtradas = plantas_json;
+    plantas_filtradas = plantas_json.filter(plantas => plantas.tipo == "interior");
+    var contenedor_plantas = $("#plantas");
+    contenedor_plantas.text(" ");
+
+    plantas_filtradas.forEach((planta, index) => {
+        var div_planta = $("<div>");
+        div_planta.addClass("col");
+        div_planta.id = "planta_" + index;
+        div_planta.append(`
+            <div class="divimagen container-100">
+                <div class="row">
+                    <img src="/images/${planta.imagen_planta}" id="imagen_planta" alt="" class="img-galeria">
+                </div>
+                <div class="texto row">
+                    <p class="nombre col-9  d-flex justify-content-start" id="nombre">${planta.nombre}</p>
+                    <p class="precio col-3 d-flex justify-content-end"  id="precio">${planta.precio}€</p>
+                </div>
+                <button class="botonadd" onclick=showmodal(${planta.id})>Añadir al carrito</button>
+
+            </div>
+        `);
+        contenedor_plantas.append(div_planta);
+    })
+}
+
+function filtroEXTERIOR() {
+    $(".carraca").css("display","none");
+    var plantas_filtradas = plantas_json;
+    plantas_filtradas = plantas_json.filter(plantas => plantas.tipo == "exterior");
+    var contenedor_plantas = $("#plantas");
+    contenedor_plantas.text(" ");
+
+    plantas_filtradas.forEach((planta, index) => {
+        var div_planta = $("<div>");
+        div_planta.addClass("col");
+        div_planta.id = "planta_" + index;
+        div_planta.append(`
+            <div class="divimagen container-100">
+                <div class="row">
+                    <img src="/images/${planta.imagen_planta}" id="imagen_planta" alt="" class="img-galeria">
+                </div>
+                <div class="texto row">
+                    <p class="nombre col-9  d-flex justify-content-start" id="nombre">${planta.nombre}</p>
+                    <p class="precio col-3 d-flex justify-content-end"  id="precio">${planta.precio}€</p>
+                </div>
+                <button class="botonadd" onclick=showmodal(${planta.id})>Añadir al carrito</button>
+
+            </div>
+        `);
+        contenedor_plantas.append(div_planta);
+    })
+}
+
+
+function filtroHUERTO() {
+    $(".carraca").css("display","none");
+    var plantas_filtradas = plantas_json;
+    plantas_filtradas = plantas_json.filter(plantas => plantas.tipo == "huerto");
+    var contenedor_plantas = $("#plantas");
+    contenedor_plantas.text(" ");
+
+    plantas_filtradas.forEach((planta, index) => {
+        var div_planta = $("<div>");
+        div_planta.addClass("col");
+        div_planta.id = "planta_" + index;
+        div_planta.append(`
+            <div class="divimagen container-100">
+                <div class="row">
+                    <img src="/images/${planta.imagen_planta}" id="imagen_planta" alt="" class="img-galeria">
+                </div>
+                <div class="texto row">
+                    <p class="nombre col-9  d-flex justify-content-start" id="nombre">${planta.nombre}</p>
+                    <p class="precio col-3 d-flex justify-content-end"  id="precio">${planta.precio}€</p>
+                </div>
+                <button class="botonadd" onclick=showmodal(${planta.id})>Añadir al carrito</button>
+
+            </div>
+        `);
+        contenedor_plantas.append(div_planta);
+    })
+}
+
+
+function filtroSEMILLAS() {
+    $(".carraca").css("display","none");
+    var plantas_filtradas = plantas_json;
+    plantas_filtradas = plantas_json.filter(plantas => plantas.tipo == "semilla");
+    var contenedor_plantas = $("#plantas");
+    contenedor_plantas.text(" ");
+
+    plantas_filtradas.forEach((planta, index) => {
+        var div_planta = $("<div>");
+        div_planta.addClass("col");
+        div_planta.id = "planta_" + index;
+        div_planta.append(`
+            <div class="divimagen container-100">
+                <div class="row">
+                    <img src="/images/${planta.imagen_planta}" id="imagen_planta" alt="" class="img-galeria">
+                </div>
+                <div class="texto row">
+                    <p class="nombre col-9  d-flex justify-content-start" id="nombre">${planta.nombre}</p>
+                    <p class="precio col-3 d-flex justify-content-end"  id="precio">${planta.precio}€</p>
+                </div>
+                <button class="botonadd" onclick=showmodal(${planta.id})>Añadir al carrito</button>
+
+            </div>
+        `);
+        contenedor_plantas.append(div_planta);
+    })
+}
+
+
+function filtroBUSCAR() {
+    $(".carraca").css("display","none");
+
+    var plantas_filtradas = plantas_json;
+    var plantaseleccionada=$("#buscar").val();
+
+    if (plantaseleccionada) {
+        plantas_filtradas = plantas_json.filter(plantas => plantas.nombre == plantaseleccionada);
+    }
+
+
+    var contenedor_plantas = $("#plantas");
+    contenedor_plantas.text(" ");
+
+    plantas_filtradas.forEach((planta, index) => {
+        var div_planta = $("<div>");
+        div_planta.addClass("col");
+        div_planta.id = "planta_" + index;
+        div_planta.append(`
+            <div class="divimagen container-100">
+                <div class="row">
+                    <img src="/images/${planta.imagen_planta}" id="imagen_planta" alt="" class="img-galeria">
+                </div>
+                <div class="texto row">
+                    <p class="nombre col-9  d-flex justify-content-start" id="nombre">${planta.nombre}</p>
+                    <p class="precio col-3 d-flex justify-content-end"  id="precio">${planta.precio}€</p>
+                </div>
+                <button class="botonadd" onclick=showmodal(${planta.id})>Añadir al carrito</button>
+
+            </div>
+        `);
+        contenedor_plantas.append(div_planta);
+    })
+}
