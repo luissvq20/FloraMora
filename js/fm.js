@@ -1,5 +1,6 @@
 $(()=>init());
 var plantas_json;
+var carrito=[];
 function init(){
     fetch('/json/productos.json')
     .then((response) => response.json())
@@ -8,6 +9,7 @@ function init(){
         plantas_json = data.plantas;
         mostrarPlantas(dataset);
     });
+    $("#vaciarCarrito").on("click", vaciarCarrito);
 }
 
 function mostrarPlantas(datos) {
@@ -27,7 +29,7 @@ function mostrarPlantas(datos) {
                     <p class="nombre col-9  d-flex justify-content-start" id="nombre">${planta.nombre}</p>
                     <p class="precio col-3 d-flex justify-content-end"  id="precio">${planta.precio}€</p>
                 </div>
-                <button class="botonadd" onclick=showmodal(${planta.id})>Añadir al carrito</button>
+                <button class="botonadd" onclick=agregarAlCarrito(${planta.id})>Añadir al carrito</button>
 
             </div>
         `);
@@ -54,7 +56,7 @@ function filtroTODO() {
                     <p class="nombre col-9  d-flex justify-content-start" id="nombre">${planta.nombre}</p>
                     <p class="precio col-3 d-flex justify-content-end"  id="precio">${planta.precio}€</p>
                 </div>
-                <button class="botonadd" onclick=showmodal(${planta.id})>Añadir al carrito</button>
+                <button class="botonadd" onclick=agregarAlCarrito(${planta.id})>Añadir al carrito</button>
 
             </div>
         `);
@@ -83,7 +85,7 @@ function filtroINTERIOR() {
                     <p class="nombre col-9  d-flex justify-content-start" id="nombre">${planta.nombre}</p>
                     <p class="precio col-3 d-flex justify-content-end"  id="precio">${planta.precio}€</p>
                 </div>
-                <button class="botonadd" onclick=showmodal(${planta.id})>Añadir al carrito</button>
+                <button class="botonadd" onclick=agregarAlCarrito(${planta.id})>Añadir al carrito</button>
 
             </div>
         `);
@@ -111,7 +113,7 @@ function filtroEXTERIOR() {
                     <p class="nombre col-9  d-flex justify-content-start" id="nombre">${planta.nombre}</p>
                     <p class="precio col-3 d-flex justify-content-end"  id="precio">${planta.precio}€</p>
                 </div>
-                <button class="botonadd" onclick=showmodal(${planta.id})>Añadir al carrito</button>
+                <button class="botonadd" onclick=agregarAlCarrito(${planta.id})>Añadir al carrito</button>
 
             </div>
         `);
@@ -140,7 +142,7 @@ function filtroHUERTO() {
                     <p class="nombre col-9  d-flex justify-content-start" id="nombre">${planta.nombre}</p>
                     <p class="precio col-3 d-flex justify-content-end"  id="precio">${planta.precio}€</p>
                 </div>
-                <button class="botonadd" onclick=showmodal(${planta.id})>Añadir al carrito</button>
+                <button class="botonadd" onclick=agregarAlCarrito(${planta.id})>Añadir al carrito</button>
 
             </div>
         `);
@@ -169,7 +171,7 @@ function filtroSEMILLAS() {
                     <p class="nombre col-9  d-flex justify-content-start" id="nombre">${planta.nombre}</p>
                     <p class="precio col-3 d-flex justify-content-end"  id="precio">${planta.precio}€</p>
                 </div>
-                <button class="botonadd" onclick=showmodal(${planta.id})>Añadir al carrito</button>
+                <button class="botonadd" onclick=agregarAlCarrito(${planta.id})>Añadir al carrito</button>
 
             </div>
         `);
@@ -205,10 +207,68 @@ function filtroBUSCAR() {
                     <p class="nombre col-9  d-flex justify-content-start" id="nombre">${planta.nombre}</p>
                     <p class="precio col-3 d-flex justify-content-end"  id="precio">${planta.precio}€</p>
                 </div>
-                <button class="botonadd" onclick=showmodal(${planta.id})>Añadir al carrito</button>
+                <button class="botonadd"  onclick=agregarAlCarrito(${planta.id})>Añadir al carrito</button>
 
             </div>
         `);
         contenedor_plantas.append(div_planta);
     })
 }
+
+function agregarAlCarrito(plantaId) {
+    // Buscar la planta en el JSON por su ID
+    var plantaSeleccionada = plantas_json.find(planta => planta.id === plantaId);
+
+    // Agregar la planta al carrito
+    carrito.push({
+        id: plantaSeleccionada.id,
+        nombre: plantaSeleccionada.nombre,
+        precio: plantaSeleccionada.precio,
+    });
+
+    // Actualizar la visualización del carrito (llamar a la función que mostrará el carrito)
+    mostrarCarrito();
+}
+
+
+
+
+
+function mostrarCarrito() {
+    var carritoContenido = $("#carritoContenido");
+    carritoContenido.empty();
+    var totalCarrito = 0;
+
+    if (carrito.length === 0) {
+        carritoContenido.append("<p>El carrito está vacío.</p>");
+    } else {
+        carrito.forEach(planta => {
+
+            var precio_planta = planta.precio;
+            totalCarrito += precio_planta;
+            totalCarrito.toFixed(2);
+
+            carritoContenido.append(`
+                <div>
+                    <p>${planta.nombre} - ${planta.precio}€</p>
+                </div>
+            `);
+
+            carritoContenido.append(`
+            <div class="total">
+                <p>Total del carrito: ${totalCarrito}€</p>
+            </div>
+        `);
+        });
+    }
+
+    // Abre el modal
+    $("#carritoModal").modal("show");
+}
+
+function realizarCompra() {
+    carrito = [];
+    $("#carritoModal").modal("hide");
+}
+
+

@@ -44,6 +44,50 @@
 }
 
 
+.titulomodal{
+  font-weight: bold;
+}
+
+
+.button-compra {
+  min-width: 8rem;
+  height: 3rem;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 0.5rem;
+  border: none;
+  box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
+  background: #674e89;
+ z-index: 1;
+}
+.button-compra:hover:after {
+  width: 100%;
+  left: 0;
+}
+.button-compra:after {
+  border-radius: 5px;
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 100%;
+  top: 0;
+  z-index: -1;
+  box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
+  transition: all 0.3s ease;
+  background-color: #a6621d69;
+  right: 0;
+}
+.button-compra:active {
+  top: 2px;
+}
+
+
 
 
 .button {
@@ -225,6 +269,26 @@
         background: #969546;
        z-index: 1;
       }
+
+
+      .button-compra {
+        min-width: 7rem;
+        margin: 0%;
+        height: 3rem;
+        color: #fff;
+        padding: 0.25em 0.5em;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+        display: inline-block;
+        outline: none;
+        border-radius: 0.5rem;
+        border: none;
+        box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
+        background: #674e89;
+        z-index: 1;
+      }
   
     
   }
@@ -273,7 +337,28 @@
     background: #969546;
    z-index: 1;
   }
+
+  .button-compra {
+    min-width: 3rem;
+    margin: 0%;
+    height: 3rem;
+    color: #fff;
+    padding: 0.25em 0.5em;
+    font-weight: bold;
+    font-size: 60%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 0.5rem;
+    border: none;
+    box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
+    background: #674e89;
+    z-index: 1;
+  }
  
+
   .carraca{
     display: none;
   }
