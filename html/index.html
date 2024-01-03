@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Flora Mora</title>
+    <link rel="icon" href="/images/floramora.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/images/floramora.ico" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
     <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" type="text/css" href="/css/fm.css" />
@@ -14,7 +20,7 @@
     <div class="container-100 cabecera">
         <div class="row">
             <div class="col-4 col-md-4 col-lg-4 align-self-center" >
-                <img class="cabecera_icono" src="/images/inicio.png"  alt="">
+                <img class="cabecera_icono" src="/images/inicio.png" onclick="inicio()" alt="">
             </div>
             <div class="col-4 col-md-4 col-lg-4 d-flex justify-content-center ">
                 <img class="logo" src="/images/floramora.png"  alt="">
@@ -101,7 +107,7 @@
     </div>
 
     <!-- Agrega esto al final del cuerpo de tu HTML -->
-    <div class="modal fade" id="carritoModal" tabindex="-1" aria-labelledby="carritoModalLabel" aria-hidden="true">
+    <div class="modal fade carriton" id="carritoModal" tabindex="-1" aria-labelledby="carritoModalLabel" aria-hidden="true">
 
         <div class="modal-dialog">
 

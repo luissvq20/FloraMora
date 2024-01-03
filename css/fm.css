@@ -50,6 +50,8 @@
 
 
 .button-compra {
+  font-family: 'DM Sans', sans-serif;
+
   min-width: 8rem;
   height: 3rem;
   color: #fff;
@@ -91,6 +93,8 @@
 
 
 .button {
+  font-family: 'DM Sans', sans-serif;
+
     min-width: 8rem;
     height: 3rem;
     color: #fff;
@@ -130,6 +134,8 @@
 
   
   .botonadd{
+    font-family: 'DM Sans', sans-serif;
+
     min-width: 8rem;
     height: 2.3rem;
     color: #fff;
@@ -167,6 +173,8 @@
   }
 
   .buscar {
+    font-family: 'DM Sans', sans-serif;
+
     min-width: 6.5rem;
     height: 3rem;
     color: #fff;
@@ -231,6 +239,30 @@
 
 }
 
+.total{
+  font-weight: bold;
+}
+
+.nombre{
+font-size: 1.2rem;
+font-family: 'DM Sans', sans-serif;
+}
+
+.precio{
+  font-weight: bold;
+  font-size: 1.2rem;
+  font-family: 'DM Sans', sans-serif;
+
+}
+
+.descripcion{
+  font-family: 'DM Sans', sans-serif;
+}
+
+.carriton{
+  font-family: 'DM Sans', sans-serif;
+
+}
 
   @media (min-width: 768px) and (max-width: 1024px) {
 

@@ -9,7 +9,11 @@ function init(){
         plantas_json = data.plantas;
         mostrarPlantas(dataset);
     });
-    $("#vaciarCarrito").on("click", vaciarCarrito);
+}
+
+function inicio(){
+    mostrarPlantas(plantas_json);
+
 }
 
 function mostrarPlantas(datos) {
@@ -28,6 +32,9 @@ function mostrarPlantas(datos) {
                 <div class="texto row">
                     <p class="nombre col-9  d-flex justify-content-start" id="nombre">${planta.nombre}</p>
                     <p class="precio col-3 d-flex justify-content-end"  id="precio">${planta.precio}€</p>
+                </div>
+                <div class="texto row">
+                <p class="descripcion">${planta.descripcion}</p>
                 </div>
                 <button class="botonadd" onclick=agregarAlCarrito(${planta.id})>Añadir al carrito</button>
 
@@ -55,6 +62,9 @@ function filtroTODO() {
                 <div class="texto row">
                     <p class="nombre col-9  d-flex justify-content-start" id="nombre">${planta.nombre}</p>
                     <p class="precio col-3 d-flex justify-content-end"  id="precio">${planta.precio}€</p>
+                </div>
+                <div class="texto row">
+                <p class="descripcion">${planta.descripcion}</p>
                 </div>
                 <button class="botonadd" onclick=agregarAlCarrito(${planta.id})>Añadir al carrito</button>
 
@@ -85,6 +95,9 @@ function filtroINTERIOR() {
                     <p class="nombre col-9  d-flex justify-content-start" id="nombre">${planta.nombre}</p>
                     <p class="precio col-3 d-flex justify-content-end"  id="precio">${planta.precio}€</p>
                 </div>
+                <div class="texto row">
+                <p class="descripcion">${planta.descripcion}</p>
+                </div>
                 <button class="botonadd" onclick=agregarAlCarrito(${planta.id})>Añadir al carrito</button>
 
             </div>
@@ -112,6 +125,9 @@ function filtroEXTERIOR() {
                 <div class="texto row">
                     <p class="nombre col-9  d-flex justify-content-start" id="nombre">${planta.nombre}</p>
                     <p class="precio col-3 d-flex justify-content-end"  id="precio">${planta.precio}€</p>
+                </div>
+                <div class="texto row">
+                <p class="descripcion">${planta.descripcion}</p>
                 </div>
                 <button class="botonadd" onclick=agregarAlCarrito(${planta.id})>Añadir al carrito</button>
 
@@ -142,6 +158,9 @@ function filtroHUERTO() {
                     <p class="nombre col-9  d-flex justify-content-start" id="nombre">${planta.nombre}</p>
                     <p class="precio col-3 d-flex justify-content-end"  id="precio">${planta.precio}€</p>
                 </div>
+                <div class="texto row">
+                <p class="descripcion">${planta.descripcion}</p>
+                </div>
                 <button class="botonadd" onclick=agregarAlCarrito(${planta.id})>Añadir al carrito</button>
 
             </div>
@@ -170,6 +189,9 @@ function filtroSEMILLAS() {
                 <div class="texto row">
                     <p class="nombre col-9  d-flex justify-content-start" id="nombre">${planta.nombre}</p>
                     <p class="precio col-3 d-flex justify-content-end"  id="precio">${planta.precio}€</p>
+                </div>
+                <div class="texto row">
+                <p class="descripcion">${planta.descripcion}</p>
                 </div>
                 <button class="botonadd" onclick=agregarAlCarrito(${planta.id})>Añadir al carrito</button>
 
@@ -207,6 +229,9 @@ function filtroBUSCAR() {
                     <p class="nombre col-9  d-flex justify-content-start" id="nombre">${planta.nombre}</p>
                     <p class="precio col-3 d-flex justify-content-end"  id="precio">${planta.precio}€</p>
                 </div>
+                <div class="texto row">
+                    <p >${planta.descripcion}</p>
+                </div>
                 <button class="botonadd"  onclick=agregarAlCarrito(${planta.id})>Añadir al carrito</button>
 
             </div>
@@ -242,7 +267,7 @@ function mostrarCarrito() {
     if (carrito.length === 0) {
         carritoContenido.append("<p>El carrito está vacío.</p>");
     } else {
-        carrito.forEach(planta => {
+        carrito.forEach((planta,index) => {
 
             var precio_planta = planta.precio;
             totalCarrito += precio_planta;
@@ -250,16 +275,18 @@ function mostrarCarrito() {
 
             carritoContenido.append(`
                 <div>
-                    <p>${planta.nombre} - ${planta.precio}€</p>
-                </div>
+                    ${planta.nombre} - ${planta.precio}€
+                    <button class="btn btn-danger btn-sm" onclick="eliminarDelCarrito(${index})">Eliminar</button>                
+                    </div>
+                    <br>
             `);
-
+        });
             carritoContenido.append(`
             <div class="total">
-                <p>Total del carrito: ${totalCarrito}€</p>
+                <p>Total del carrito: ${totalCarrito.toFixed(2)}€</p>
             </div>
         `);
-        });
+        
     }
 
     // Abre el modal
@@ -269,6 +296,12 @@ function mostrarCarrito() {
 function realizarCompra() {
     carrito = [];
     $("#carritoModal").modal("hide");
+}
+
+function eliminarDelCarrito(index_planta) {
+    carrito.splice(index_planta, 1);
+    
+    mostrarCarrito();
 }
 
 
